@@ -1,0 +1,17 @@
+<nav>
+  <button class="back-button" routerLink="">Back to boards</button>
+</nav>
+<div class="container">
+  <h2>New Board</h2>
+  <form (submit)="addBoard()">
+    <div>
+      <label for="board-title">
+        Title:
+        <input id="board-title" [formControl]="title" name="title" />
+      </label>
+    </div>
+    <button type="submit" [disabled]="!title.valid">
+      Save
+    </button>
+  </form>
+</div>

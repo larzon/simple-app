@@ -1,0 +1,15 @@
+<nav>
+  <button class="back-button" routerLink="">Back to boards</button>
+</nav>
+@if (board) {
+<div id="board-container">
+  <span class="board-title">{{ board.title }}</span>
+  <span class="board-id">ID: {{ board.id }}</span>
+  <!--
+    TODO: add lists & cards
+  <nav>
+    <button>Add list</button>
+  </nav>
+  -->
+</div>
+}

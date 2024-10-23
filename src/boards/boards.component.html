@@ -1,0 +1,14 @@
+<nav>
+  <button (click)="navigate()">Add board</button>
+</nav>
+<div class="container">
+  <ul class="boards">
+    @for (board of boards; track $index) {
+    <li>
+      <button [routerLink]="['/board', board.id]">
+        <span class="board-title">{{ board.title }}</span>
+      </button>
+    </li>
+    }
+  </ul>
+</div>
