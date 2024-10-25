@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { RouterModule, ActivatedRoute } from '@angular/router';
 import { BOARDS } from '../boards';
 import { LISTS } from '../lists';
+import { CARDS } from '../cards';
 
 @Component({
   selector: 'app-board',
@@ -15,4 +16,5 @@ export class BoardComponent {
   id = Number(this.activeRoute.snapshot.paramMap.get('id'));
   board = BOARDS.find((i) => i.id === this.id);
   lists = LISTS.filter((i) => i.boardId === this.id);
+  cards = CARDS.filter((i) => this.lists.filter((j) => j.id === i.listId));
 }

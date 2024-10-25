@@ -11,13 +11,29 @@
       <li>
           <span class="list-name">{{ list.name }}</span>
             <!-- TODO: add cards -->
+            <div class="container">
+              <ul class="cards">
+                @for (card of cards; track $index) {
+                  @if(card.listId === list.id) {
+                    <li>
+                        <span class="card-name">{{ card.name }}</span>
+                    </li>
+                  }
+                }
+                <!--
+                <li>
+                  <nav>
+                    <button [routerLink]="['/add-card', list.id]">Add card</button>
+                  </nav>
+                </li>
+                -->
+              </ul>
+            </div>
       </li>
       }
-      <li>
-        <nav>
-          <button [routerLink]="['/add-list', board.id]">Add list</button>
-        </nav>
-      </li>
+      <nav>
+        <button [routerLink]="['/add-list', board.id]">Add list</button>
+      </nav>
     </ul>
   </div>
 </div>
