@@ -13,10 +13,6 @@ export class BoardsComponent {
   boards = BOARDS;
   router = inject(Router);
 
-  show(title: string) {
-    alert(title);
-  }
-
   navigate() {
     this.router.navigateByUrl('/add-board');
   }

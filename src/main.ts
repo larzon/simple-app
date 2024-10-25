@@ -4,11 +4,13 @@ import { AppComponent } from './app/app.component';
 import { AddBoardComponent } from './add-board/add-board.component';
 import { BoardComponent } from './board/board.component';
 import { BoardsComponent } from './boards/boards.component';
+import { AddListComponent } from './add-list/add-list.component';
 
 const routes: Routes = [
   { path: '', component: BoardsComponent },
   { path: 'add-board', component: AddBoardComponent },
   { path: 'board/:id', component: BoardComponent },
+  { path: 'add-list', component: AddListComponent },
 ];
 
 bootstrapApplication(AppComponent, {

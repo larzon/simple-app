@@ -12,13 +12,13 @@ import { BOARDS } from '../boards';
   styleUrl: './add-board.component.css',
 })
 export class AddBoardComponent {
-  title = new FormControl('', Validators.required);
+  name = new FormControl('', Validators.required);
   router = inject(Router);
 
   addBoard() {
-    let title = this.title.value ?? '';
+    let name = this.name.value ?? '';
 
-    if (this.title.valid) {
+    if (this.name.valid) {
       let ids = BOARDS.map((a) => a.id);
       let maxId = 0;
       if (ids.length > 0) {
@@ -26,10 +26,10 @@ export class AddBoardComponent {
       }
       let newBoard = {
         id: maxId + 1,
-        title: title,
+        name: name,
       };
       BOARDS.unshift(newBoard);
-      this.title.reset();
+      this.name.reset();
       this.router.navigateByUrl('/');
     }
   }

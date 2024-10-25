@@ -4,3 +4,19 @@
   padding: 20px;
   border-radius: 15px;
 }
+.lists li {
+  list-style: none;
+  text-align: left;
+  display: inline-table;
+  flex-wrap: wrap;
+}
+.lists li span {
+  margin: 10px;
+  list-style: none;
+  padding: 10px;
+  background-color: gray;
+  border-radius: 15px;
+  text-align: left;
+  display: inline-table;
+  flex-wrap: wrap;
+}

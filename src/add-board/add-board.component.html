@@ -5,12 +5,12 @@
   <h2>New Board</h2>
   <form (submit)="addBoard()">
     <div>
-      <label for="board-title">
-        Title:
-        <input id="board-title" [formControl]="title" name="title" />
+      <label for="board-name">
+        Name:
+        <input id="board-name" [formControl]="name" name="name" />
       </label>
     </div>
-    <button type="submit" [disabled]="!title.valid">
+    <button type="submit" [disabled]="!name.valid">
       Save
     </button>
   </form>

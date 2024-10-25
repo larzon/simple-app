@@ -3,13 +3,26 @@
 </nav>
 @if (board) {
 <div id="board-container">
-  <span class="board-title">{{ board.title }}</span>
+  <span class="board-name">{{ board.name }}</span>
   <span class="board-id">ID: {{ board.id }}</span>
   <!--
     TODO: add lists & cards
-  <nav>
-    <button>Add list</button>
-  </nav>
   -->
+  <div class="container">
+    <ul class="lists">
+      @for (list of lists; track $index) {
+      <li>
+        <!-- <button [routerLink]="['/list', list.id]"> -->
+          <span class="board-name">{{ list.name }}</span>
+        <!-- </button> -->
+      </li>
+      }
+      <li>
+        <nav>
+          <button (click)="navigate()">Add list</button>
+        </nav>
+      </li>
+    </ul>
+  </div>
 </div>
 }

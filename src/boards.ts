@@ -1,14 +1,14 @@
 export interface Board {
   id: number;
-  title: string;
+  name: string;
 }
 export const BOARDS: Board[] = [
   {
     id: 1,
-    title: 'Board 1',
+    name: 'Board 1',
   },
   {
     id: 2,
-    title: 'Board 2',
+    name: 'Board 2',
   },
 ];

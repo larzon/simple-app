@@ -6,7 +6,7 @@
     @for (board of boards; track $index) {
     <li>
       <button [routerLink]="['/board', board.id]">
-        <span class="board-title">{{ board.title }}</span>
+        <span class="board-name">{{ board.name }}</span>
       </button>
     </li>
     }
