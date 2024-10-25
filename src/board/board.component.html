@@ -1,25 +1,21 @@
 <nav>
-  <button class="back-button" routerLink="">Back to boards</button>
+  <button class="back-button" routerLink="">Back to all boards</button>
 </nav>
 @if (board) {
 <div id="board-container">
   <span class="board-name">{{ board.name }}</span>
   <span class="board-id">ID: {{ board.id }}</span>
-  <!--
-    TODO: add lists & cards
-  -->
   <div class="container">
     <ul class="lists">
       @for (list of lists; track $index) {
       <li>
-        <!-- <button [routerLink]="['/list', list.id]"> -->
-          <span class="board-name">{{ list.name }}</span>
-        <!-- </button> -->
+          <span class="list-name">{{ list.name }}</span>
+            <!-- TODO: add cards -->
       </li>
       }
       <li>
         <nav>
-          <button (click)="navigate()">Add list</button>
+          <button [routerLink]="['/add-list', board.id]">Add list</button>
         </nav>
       </li>
     </ul>

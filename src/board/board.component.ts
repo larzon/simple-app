@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { Router, RouterModule, ActivatedRoute } from '@angular/router';
+import { RouterModule, ActivatedRoute } from '@angular/router';
 import { BOARDS } from '../boards';
 import { LISTS } from '../lists';
 
@@ -15,9 +15,4 @@ export class BoardComponent {
   id = Number(this.activeRoute.snapshot.paramMap.get('id'));
   board = BOARDS.find((i) => i.id === this.id);
   lists = LISTS.filter((i) => i.boardId === this.id);
-  router = inject(Router);
-
-  navigate() {
-    this.router.navigateByUrl('/add-list');
-  }
 }

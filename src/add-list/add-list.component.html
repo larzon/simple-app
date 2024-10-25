@@ -1,1 +1,17 @@
-<p>add-list works!</p>
+<nav>
+    <button class="back-button" (click)="backToBoard()">Back to board</button>
+  </nav>
+  <div class="container">
+    <h2>New List</h2>
+    <form (submit)="addList()">
+      <div>
+        <label for="list-name">
+          Name:
+          <input id="list-name" [formControl]="name" name="name" />
+        </label>
+      </div>
+      <button type="submit" [disabled]="!name.valid">
+        Save
+      </button>
+    </form>
+  </div>

@@ -1,5 +1,5 @@
-import { Component, inject } from '@angular/core';
-import { Router, RouterModule } from '@angular/router';
+import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { BOARDS } from '../boards';
 
 @Component({
@@ -11,9 +11,4 @@ import { BOARDS } from '../boards';
 })
 export class BoardsComponent {
   boards = BOARDS;
-  router = inject(Router);
-
-  navigate() {
-    this.router.navigateByUrl('/add-board');
-  }
 }

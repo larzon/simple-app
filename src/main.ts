@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: '', component: BoardsComponent },
   { path: 'add-board', component: AddBoardComponent },
   { path: 'board/:id', component: BoardComponent },
-  { path: 'add-list', component: AddListComponent },
+  { path: 'add-list/:boardId', component: AddListComponent },
 ];
 
 bootstrapApplication(AppComponent, {
