@@ -14,5 +14,6 @@ li {
   border-radius: 15px;
 }
 .cards li {
+  display: block;
   background-color: lightgray;
 }
