@@ -1,9 +1,9 @@
 import { bootstrapApplication } from '@angular/platform-browser';
 import { provideRouter, Routes } from '@angular/router';
 import { AppComponent } from './app/app.component';
+import { BoardsComponent } from './boards/boards.component';
 import { AddBoardComponent } from './add-board/add-board.component';
 import { BoardComponent } from './board/board.component';
-import { BoardsComponent } from './boards/boards.component';
 import { AddListComponent } from './add-list/add-list.component';
 import { AddCardComponent } from './add-card/add-card.component';
 
