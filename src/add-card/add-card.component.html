@@ -1,0 +1,19 @@
+<nav>
+  <button class="back-button" (click)="backToBoard()">Back to board</button>
+</nav>
+<div class="container">
+  <h2>New Card</h2>
+  <form [formGroup]="addCardForm" (submit)="addCard()">
+    <div>
+      <label for="card-name">
+        Name:
+        <input id="card-name" formControlName="name" />
+        Description:
+        <input id="card-description" formControlName="description" />
+      </label>
+    </div>
+    <button type="submit" [disabled]="!addCardForm.valid">
+      Save
+    </button>
+  </form>
+</div>

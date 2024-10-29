@@ -7,26 +7,23 @@
   <span class="board-id">ID: {{ board.id }}</span>
   <div class="container">
     <ul class="lists">
-      @for (list of lists; track $index) {
+      @for (list of lists; track list.id) {
       <li>
           <span class="list-name">{{ list.name }}</span>
             <!-- TODO: add cards -->
             <div class="container">
               <ul class="cards">
-                @for (card of cards; track $index) {
+                @for (card of cards; track card.id) {
                   @if(card.listId === list.id) {
                     <li>
                         <span class="card-name">{{ card.name }}</span>
+                        <span class="card-description">{{ card.description }}</span>
                     </li>
                   }
                 }
-                <!--
-                <li>
-                  <nav>
-                    <button [routerLink]="['/add-card', list.id]">Add card</button>
-                  </nav>
-                </li>
-                -->
+                <nav>
+                  <button [routerLink]="['/add-card', list.id]">Add card</button>
+                </nav>
               </ul>
             </div>
       </li>

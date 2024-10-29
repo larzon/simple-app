@@ -16,7 +16,7 @@ h2 {
 }
 button {
   width: auto;
-  display: inline-block;
+  display: inline-table;
   margin: 10px;
   padding: 10px;
   border-radius: 20px;
@@ -26,6 +26,23 @@ button {
   border: none;
   cursor: pointer;
   text-decoration: none;
+}
+form div {
+  padding: 5px;
+}
+form button {
+  background-color: royalblue;
+  margin-top: 10px;
+}
+form button:disabled {
+  background-color: gray;
+}
+form label {
+  font-weight: bold;
+}
+form label input {
+  display: block;
+  margin-bottom: 5px;
 }
 .back-button {
   background-color: #000;
@@ -39,10 +56,8 @@ button {
   font-size: 11pt;
   color: #000;
 }
-.board-id {
+.board-id, .card-description {
   display: block;
-  text-align: left;
-  margin-bottom: 5px;
   color: gray;
   font-size: 8pt;
 }

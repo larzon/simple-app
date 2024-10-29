@@ -9,7 +9,6 @@ import { LISTS } from '../lists';
   standalone: true,
   imports: [ReactiveFormsModule, RouterModule],
   templateUrl: './add-list.component.html',
-  styleUrl: './add-list.component.css'
 })
 export class AddListComponent {
   name = new FormControl('', Validators.required);

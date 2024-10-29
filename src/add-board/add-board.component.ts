@@ -9,7 +9,6 @@ import { BOARDS } from '../boards';
   standalone: true,
   imports: [ReactiveFormsModule, RouterModule],
   templateUrl: './add-board.component.html',
-  styleUrl: './add-board.component.css',
 })
 export class AddBoardComponent {
   name = new FormControl('', Validators.required);
