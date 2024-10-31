@@ -6,6 +6,7 @@ import { AddBoardComponent } from './add-board/add-board.component';
 import { BoardComponent } from './board/board.component';
 import { AddListComponent } from './add-list/add-list.component';
 import { AddCardComponent } from './add-card/add-card.component';
+import { provideHttpClient } from '@angular/common/http';
 
 const routes: Routes = [
   { path: '', component: BoardsComponent },
@@ -16,5 +17,5 @@ const routes: Routes = [
 ];
 
 bootstrapApplication(AppComponent, {
-  providers: [provideRouter(routes)],
+  providers: [provideRouter(routes), provideHttpClient()],
 });
