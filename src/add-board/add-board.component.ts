@@ -1,10 +1,9 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormControl, Validators } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import { BOARDS } from '../boards';
 import { BoardService } from '../board.service';
-import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-add-board',
@@ -32,12 +31,6 @@ export class AddBoardComponent {
         name: name,
       };
       BOARDS.unshift(newBoard);
-      //TODO: uncomment the following code to test with backend
-      /*
-      let newBoard = {
-        id: -1,
-        name: name,
-      };
       this.boardService.addBoard(newBoard).subscribe({
         next: (response) => {
           console.log(response);
@@ -46,7 +39,6 @@ export class AddBoardComponent {
           alert(error.message);
         }
       });
-      */
       this.name.reset();
       this.router.navigateByUrl('/');
     }

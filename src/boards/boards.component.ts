@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { Board, BOARDS } from '../boards';
+import { Board } from '../boards';
 import { BoardService } from '../board.service';
-import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-boards',
@@ -12,9 +11,8 @@ import { HttpErrorResponse } from '@angular/common/http';
   styleUrl: './boards.component.css',
 })
 export class BoardsComponent implements OnInit {
-  boards = BOARDS;
-  //TODO: replace previous line with the following to test with backend
-  //public boards: Board[] = [];
+  public boards: Board[] = [];
+  //boards = BOARDS;
 
   constructor(private boardService: BoardService){}
 
@@ -23,17 +21,14 @@ export class BoardsComponent implements OnInit {
   }
 
   public getBoards(): void {
-    //TODO: uncomment the following code to test with backend
-    /*
     this.boardService.getBoards().subscribe({
       next: (response) => {
-        this.boards = response;
+        this.boards = response.reverse();
         console.log(this.boards);
       },
       error: (error) => {
         alert(error.message);
       }
     });
-    */
   }
 }

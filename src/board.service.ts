@@ -15,6 +15,10 @@ export class BoardService {
     return this.http.get<Board[]>(`${this.apiServerUrl}/board/all`);
   }
 
+  public getBoard(id: number): Observable<void> {
+    return this.http.get<void>(`${this.apiServerUrl}/board/find/${id}`);
+  }
+
   public addBoard(board: Board): Observable<Board> {
     return this.http.post<Board>(`${this.apiServerUrl}/board/add`, board);
   }
