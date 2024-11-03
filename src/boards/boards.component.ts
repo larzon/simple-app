@@ -11,7 +11,8 @@ import { BoardService } from '../board.service';
   styleUrl: './boards.component.css',
 })
 export class BoardsComponent implements OnInit {
-  public boards: Board[] = [];
+  public static boards: Board[] = [];
+  public classReference = BoardsComponent;
   //boards = BOARDS;
 
   constructor(private boardService: BoardService){}
@@ -23,8 +24,8 @@ export class BoardsComponent implements OnInit {
   public getBoards(): void {
     this.boardService.getBoards().subscribe({
       next: (response) => {
-        this.boards = response.reverse();
-        console.log(this.boards);
+        BoardsComponent.boards = response.reverse();
+        console.log(BoardsComponent.boards);
       },
       error: (error) => {
         alert(error.message);

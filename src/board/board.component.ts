@@ -1,6 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { RouterModule, ActivatedRoute } from '@angular/router';
-import { Board, BOARDS } from '../boards';
+//import { BOARDS } from '../boards';
 import { LISTS } from '../lists';
 import { CARDS } from '../cards';
 import { BoardService } from '../board.service';
