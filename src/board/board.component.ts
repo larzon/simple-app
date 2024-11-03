@@ -1,6 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { RouterModule, ActivatedRoute } from '@angular/router';
-//import { BOARDS } from '../boards';
+import { BOARDS } from '../boards';
 import { LISTS } from '../lists';
 import { CARDS } from '../cards';
 import { BoardService } from '../board.service';
@@ -15,8 +15,8 @@ import { BoardService } from '../board.service';
 export class BoardComponent implements OnInit {
   activeRoute = inject(ActivatedRoute);
   id = Number(this.activeRoute.snapshot.paramMap.get('id'));
-  public board: any;
-  //board = BOARDS.find((i) => i.id === this.id);
+  //public board: any;
+  board = BOARDS.find((i) => i.id === this.id);
   lists = LISTS.filter((i) => i.boardId === this.id);
   cards = CARDS.filter((i) => this.lists.filter((j) => j.id === i.listId));
 
@@ -27,6 +27,7 @@ export class BoardComponent implements OnInit {
   }
 
   public getBoard(id : number): void {
+    /*
     this.boardService.getBoard(id).subscribe({
       next: (response) => {
         this.board = response;
@@ -36,5 +37,6 @@ export class BoardComponent implements OnInit {
         alert(error.message);
       }
     });
+    */
   }
 }

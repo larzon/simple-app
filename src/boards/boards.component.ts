@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { Board } from '../boards';
+import { BOARDS } from '../boards';
 import { BoardService } from '../board.service';
 
 @Component({
@@ -11,9 +11,9 @@ import { BoardService } from '../board.service';
   styleUrl: './boards.component.css',
 })
 export class BoardsComponent implements OnInit {
-  public static boards: Board[] = [];
-  public classReference = BoardsComponent;
-  //boards = BOARDS;
+  //public static boards: Board[] = [];
+  //public classReference = BoardsComponent;
+  boards = BOARDS;
 
   constructor(private boardService: BoardService){}
 
@@ -22,6 +22,7 @@ export class BoardsComponent implements OnInit {
   }
 
   public getBoards(): void {
+    /*
     this.boardService.getBoards().subscribe({
       next: (response) => {
         BoardsComponent.boards = response.reverse();
@@ -31,5 +32,6 @@ export class BoardsComponent implements OnInit {
         alert(error.message);
       }
     });
+    */
   }
 }

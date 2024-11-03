@@ -31,7 +31,8 @@ export class AddBoardComponent {
         id: maxId + 1,
         name: name,
       };
-      //BOARDS.unshift(newBoard);
+      BOARDS.unshift(newBoard);
+      /*
       this.boardService.addBoard(newBoard).subscribe({
         next: (response) => {
           this.boardsComponent.getBoards();
@@ -41,6 +42,7 @@ export class AddBoardComponent {
           alert(error.message);
         }
       });
+      */
       this.name.reset();
       this.router.navigateByUrl('/');
     }
